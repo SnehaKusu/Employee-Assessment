@@ -1,0 +1,27 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #4a148c;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-wrapper {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    overflow-y: auto; /* Enables scrolling inside the form if needed */
+  }
+  
+  

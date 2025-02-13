@@ -1,1 +1,334 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== Global Styles ===== */
+
+/* Gradient Background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto; /* Allow scrolling */
+}
+
+body {
+  background: linear-gradient(to right, #151618, #2e1635);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Allow content to flow properly */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Form Container - Glassmorphism Effect */
+.container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: auto;
+}
+
+/* Ensure form content is scrollable */
+.form-wrapper {
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh; /* Prevents cutting off on small screens */
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* Form Labels */
+label {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Input fields with glow effect */
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.6);
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* Accordion Styling */
+.accordion-item {
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.accordion-body {
+  background: rgba(255, 255, 255, 0.12) !important; /* Soft Grayish Background */
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+/* Accordion Buttons */
+.accordion-button {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  transform: scale(1.02);
+}
+
+/* Submit Button */
+.btn-primary {
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  border: none;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #5b86e5, #36d1dc);
+  transform: scale(1.08);
+  box-shadow: 0px 4px 15px rgba(91, 134, 229, 0.6);
+}
+
+/* ===== Dark & Light Mode Support ===== */
+:root {
+  --primary-bg: linear-gradient(to right, #151618, #2e1635);
+  --form-bg: rgba(255, 255, 255, 0.15);
+  --text-color: #fff;
+  --input-bg: rgba(255, 255, 255, 0.2);
+  --button-gradient: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
+[data-theme="light"] {
+  --primary-bg: linear-gradient(to right, #ffffff, #e0e0e0);
+  --form-bg: rgba(255, 255, 255, 0.85);
+  --text-color: #333;
+  --input-bg: rgba(0, 0, 0, 0.1);
+  --button-gradient: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Apply Background & Text Color */
+body {
+  background: var(--primary-bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Form Container */
+.container {
+  background: var(--form-bg);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Dark Mode Toggle Button */
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--button-gradient);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Smooth Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress Indicator */
+.progress-container {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.progress-fill {
+  height: 8px;
+  background: var(--button-gradient);
+  border-radius: 5px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Fix Stepper & Form Height */
+.mat-horizontal-stepper {
+  width: 100%;
+}
+
+.mat-stepper-vertical {
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+label, .accordion-button, .question-label {
+  color: var(--text-color) !important; /* Dynamically adjust color */
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Fix text color for labels, buttons, and questions */
+label, .accordion-button, .question-label {
+  color: var(--text-color) !important;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder & Input Text Color Fix */
+input::placeholder, textarea::placeholder, select {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  color: #333 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+/* Reduce Brightness of Questions Inside Dropdown */
+.accordion-body label, 
+.accordion-body p, 
+.accordion-body span, 
+.accordion-body div {
+  color: #c2c2c2 !important; /* Soft Gray Instead of Bright White */
+  font-weight: 500;
+}
+
+/* Adjust Input & Select Fields in Dropdown Sections */
+.accordion-body input, 
+.accordion-body select, 
+.accordion-body textarea {
+  background: rgba(255, 255, 255, 0.15); /* Darker Input Background */
+  color: #ab9090 !important; /* Softer White */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion-body input::placeholder, 
+.accordion-body textarea::placeholder {
+  color: rgba(200, 200, 200, 0.6); /* Dimmed Placeholder */
+}
+
+/* When Input is Focused */
+.accordion-body input:focus, 
+.accordion-body select:focus, 
+.accordion-body textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid #a855f7; /* Purple Glow */
+  box-shadow: 0px 0px 8px rgba(168, 85, 247, 0.6);
+  outline: none;
+}
+
+/* Darken the Accordion Body Background for Better Contrast */
+.accordion-body {
+  background: #1f1b2d !important; /* Darker Grayish-Purple */
+  border-radius: 8px;
+  padding: 15px;
+}
+/* ===== Fix for Light Mode: Make Labels & Accordion Background White ===== */
+[data-theme="light"] .accordion-body {
+  background: #ffffff !important; /* White Background */
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #ddd; /* Light Gray Border */
+}
+
+[data-theme="light"] .accordion-body label,
+[data-theme="light"] .accordion-body p,
+[data-theme="light"] .accordion-body span,
+[data-theme="light"] .accordion-body div {
+  color: #333 !important; /* Dark Gray Text for Readability */
+  font-weight: 500;
+}
+
+/* Ensure Dropdown Fields & Input Backgrounds Adjust Properly */
+[data-theme="light"] .accordion-body input, 
+[data-theme="light"] .accordion-body select, 
+[data-theme="light"] .accordion-body textarea {
+  background: #f5f5f5 !important; /* Light Gray Input Background */
+  color: #333 !important; /* Dark Text */
+  border: 1px solid #ccc;
+}
+
+/* Placeholder Adjustments for Light Mode */
+[data-theme="light"] .accordion-body input::placeholder, 
+[data-theme="light"] .accordion-body textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dropdown Fix in Light Mode */
+[data-theme="light"] .accordion-body select option {
+  background: #ffffff !important; /* White Dropdown Background */
+  color: #333 !important; /* Dark Text */
+}
+
+/* Accordion Button Styling */
+[data-theme="light"] .accordion-button {
+  background: #f8f8f8 !important; /* Soft Light Gray */
+  color: #333 !important; /* Dark Text */
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+[data-theme="light"] .accordion-button:hover {
+  background: #e0e0e0 !important; /* Slightly Brighter on Hover */
+}
