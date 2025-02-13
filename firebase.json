@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "dist/employee-assessment",
+    "ignore": ["firebase.json", "**/node_modules/**", "**/firebase-debug.log", "**/firebase-error.log"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
