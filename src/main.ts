@@ -6,8 +6,8 @@ import { AdminDashboardComponent } from './app/admin-dashboard/admin-dashboard.c
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const routes: Routes = [
-  { path: '', component: EmployeeAssessmentComponent },  // ✅ Default Route
-  { path: 'admin', component: AdminDashboardComponent } // ✅ Admin Dashboard Route
+  { path: '/', component: EmployeeAssessmentComponent },  // ✅ Default Route
+  { path: '/admin', component: AdminDashboardComponent } // ✅ Admin Dashboard Route
 ];
 
 bootstrapApplication(EmployeeAssessmentComponent, {

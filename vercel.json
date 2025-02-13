@@ -1,4 +1,13 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "cleanUrls": true
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/"
+    },
+    {
+      "src": "/admin",
+      "dest": "/"
+    },
+
+  ]
 }
